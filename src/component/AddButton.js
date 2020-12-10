@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 1,  // priority
         backgroundColor: 'deepskyblue',
-        bottom: 80,
+        bottom: 100,
         right: 25,
         width: 70,
         height: 70,
