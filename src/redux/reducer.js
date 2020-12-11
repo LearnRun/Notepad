@@ -1,15 +1,24 @@
 // reducer.js
 import { combineReducers } from 'redux';
+import { v4 as uuidv4 } from 'uuid';
 
 // Action Types 정의
 export const ADD_NOTE = 'ADD_NOTE'
+export const DELETE_NOTE = 'DELETE_NOTE'
 
 // Action Creators 함수
 export function addNote(note) {
     return {
         type: ADD_NOTE,
-        id: Math.random(),
+        id: uuidv4(),
         noteContent: note
+    }
+}
+
+export function deleteNote(id) {
+    return {
+        type: DELETE_NOTE,
+        removeNoteId: id
     }
 }
 
@@ -28,6 +37,15 @@ const notesReducer = (state = note_obj_initialState, action) => {
                 },
                 ...state
             ]
+        case DELETE_NOTE:
+            const newArray = state.filter(noteObj => {
+
+                if (noteObj.id === action.removeNoteId) {
+                    return false;
+                }
+                return true
+            })
+            return newArray
         default:
             return state
     }

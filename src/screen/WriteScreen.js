@@ -23,8 +23,7 @@ const WriteScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             {
-                console.log('currNote ',currNote),
-                console.log('currNoteObj ', currNoteObj)
+                // console.log('currNote ',currNote),
             }
             <TextInput
                 placeholder='Type title here'

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "Notepad-tvOS.app"
-               BlueprintName = "Notepad-tvOS"
-               ReferencedContainer = "container:Notepad.xcodeproj">
+               BuildableName = "myNote-tvOS.app"
+               BlueprintName = "myNote-tvOS"
+               ReferencedContainer = "container:myNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "Notepad-tvOSTests.xctest"
-               BlueprintName = "Notepad-tvOSTests"
-               ReferencedContainer = "container:Notepad.xcodeproj">
+               BuildableName = "myNote-tvOSTests.xctest"
+               BlueprintName = "myNote-tvOSTests"
+               ReferencedContainer = "container:myNote.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Notepad-tvOS.app"
-            BlueprintName = "Notepad-tvOS"
-            ReferencedContainer = "container:Notepad.xcodeproj">
+            BuildableName = "myNote-tvOS.app"
+            BlueprintName = "myNote-tvOS"
+            ReferencedContainer = "container:myNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Notepad-tvOS.app"
-            BlueprintName = "Notepad-tvOS"
-            ReferencedContainer = "container:Notepad.xcodeproj">
+            BuildableName = "myNote-tvOS.app"
+            BlueprintName = "myNote-tvOS"
+            ReferencedContainer = "container:myNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

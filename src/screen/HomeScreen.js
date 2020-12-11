@@ -2,14 +2,16 @@
 import React from 'react'
 import {
     StyleSheet,
+    TouchableOpacity,
     SafeAreaView,
     FlatList,
+    Button,
     Alert,
     View,
     Text,
 } from 'react-native';
 import AddButton from '../component/AddButton'
-import { List } from 'react-native-paper'
+import ListItem from '../component/ListItem'
 import { useSelector } from 'react-redux'
 
 const HomeScreen = ({ navigation }) => {
@@ -22,17 +24,16 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
+            {
+                console.log('currNoteObj ', currNoteObj)
+            }
             <FlatList
                 data={currNoteObj}
                 renderItem={({ item }) => (
-                    <List.Item
-                        onPress={()=>{}}
-                        title={item.noteContent.title}
+                    <ListItem 
+                        title={item.noteContent.title} 
                         description={item.noteContent.description}
-                        titleNumberOfLines={1}
-                        descriptionNumberOfLines={1}
-                        titleStyle={styles.listTitle}
-                        descriptionStyle={styles.listDescription}
+                        id={item.id}
                     />
                 )}
                 keyExtractor={item => item.id.toString()}
@@ -46,11 +47,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'lavender',
-        paddingVertical: 5,
-        paddingHorizontal: 10,
-    },
-    listTitle: {
-        fontSize: 23,
+        paddingHorizontal: 20,
+        paddingVertical: 15,
     },
 })
 
