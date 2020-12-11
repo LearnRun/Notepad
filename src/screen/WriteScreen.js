@@ -1,5 +1,7 @@
 // WriteScreen.js
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { currNoteDescriptionSet, currNoteTitleSet } from '../redux/reducer'
 import {
     StyleSheet,
     SafeAreaView,
@@ -11,18 +13,25 @@ import { TextInput } from 'react-native-paper';
 
 const WriteScreen = ({ navigation }) => {
 
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
+    const currNote = useSelector(state => state.currNote.noteContent)
+    const currNoteObj = useSelector(state => state.notes)
+    
+    const dispatch = useDispatch()
+    const currNoteTitleSetFunc = title => dispatch(currNoteTitleSet(title))
+    const currNoteDescriptionSetFunc = description => dispatch(currNoteDescriptionSet(description))
 
     return (
         <SafeAreaView style={styles.container}>
-
+            {
+                console.log('currNote ',currNote),
+                console.log('currNoteObj ', currNoteObj)
+            }
             <TextInput
                 placeholder='Type title here'
-                value={title}
+                value={currNote.title}
                 mode='outlined'
                 numberOfLines={1}
-                onChangeText={setTitle}
+                onChangeText={currNoteTitleSetFunc}
                 style={styles.titleText}
                 autoFocus={false}
             />
@@ -32,8 +41,8 @@ const WriteScreen = ({ navigation }) => {
             >
                 <TextInput
                     placeholder='Type discription here'
-                    value={description}
-                    onChangeText={setDescription}
+                    value={currNote.description}
+                    onChangeText={currNoteDescriptionSetFunc}
                     mode='outlined'
                     multiline={true}
                     numberOfLines={50}

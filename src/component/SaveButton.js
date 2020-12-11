@@ -1,5 +1,7 @@
 // SaveButton.js
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addNote, cleanCurrNoteSet } from '../redux/reducer'
 import {
     TouchableOpacity,
     StyleSheet,
@@ -7,12 +9,18 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const SaveButton = () => {
+const SaveButton = ({navigation}) => {
+
+    const currNote = useSelector(state => state.currNote.noteContent)
+    
+    const dispatch = useDispatch()
+    const addNoteFunc = noteContent => dispatch(addNote(noteContent))
+    const cleanCurrNoteFunc = () => dispatch(cleanCurrNoteSet())
 
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={()=>Alert.alert("SAVE")}
+            onPress={()=>{addNoteFunc(currNote), cleanCurrNoteFunc(), navigation.goBack()}}
         >
             <Icon name='save' size={35} color='white'/>
         </TouchableOpacity>
