@@ -1,5 +1,7 @@
 // AddButton.js
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { currNoteModeSet, prevNoteTitleSet, prevNoteDescriptionSet } from '../redux/reducer'
 import {
     StyleSheet,
     SafeAreaView,
@@ -10,7 +12,12 @@ import {
 
 const AddButton = (props) => {
 
+    const dispatch = useDispatch()
+
     const onPressCustomAddButtonHandler = () => {
+        dispatch(currNoteModeSet('ADD')),
+        dispatch(prevNoteTitleSet('')),
+        dispatch(prevNoteDescriptionSet('')),
         props.onPressCustomAddButton()
     }
 
